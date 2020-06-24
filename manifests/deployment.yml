@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "tfkube01-a192"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "tfkube01-a192"
+    spec:
+      containers:
+        - name: "tfkube01-a192"
+          image: "manualkuberegistry.azurecr.io/tfkube01"
+          ports:
+          - containerPort: 80
